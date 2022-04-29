@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'maven-publish'
+}
+
+group = 'com.aircode.dtv.golf'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'plusbar-core'
+            from components.java
+            versionMapping {
+            	usage('java-api') {
+            		fromResolutionOf('runtimeClasspath')
+            	}
+            	usage('java-runtime') {
+            		fromResolutionResult()
+            	}
+            }
+        }
+    }
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly 'com.halowing.spring:web-lib:0.0.1-SNAPSHOT'
+	compileOnly 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.springframework.boot:spring-boot-starter-validation'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
