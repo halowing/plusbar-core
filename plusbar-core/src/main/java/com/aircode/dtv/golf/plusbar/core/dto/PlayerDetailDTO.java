@@ -1,9 +1,13 @@
 package com.aircode.dtv.golf.plusbar.core.dto;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.aircode.dtv.golf.plusbar.core.dto.PlayerDetailDTO.genesisRecordDTO.CareerDTO;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
 public class PlayerDetailDTO extends PlayerDTO {
 	
 	private static final long serialVersionUID = -8615940689406589846L;
@@ -20,7 +24,7 @@ public class PlayerDetailDTO extends PlayerDTO {
 	private String affiliatedTeam;   // "",
 	
 	private PerformanceDTO performance;
-	private genesisRecordDTO genesisRecord;
+	private GenesisRecordDTO genesisRecord;
 	private List<CareerDTO> careerList;
 	
 	public String getPlayerId() {
@@ -103,15 +107,6 @@ public class PlayerDetailDTO extends PlayerDTO {
 		this.affiliatedTeam = affiliatedTeam;
 	}
 	
-	@Override
-	public String toString() {
-		return "PlayerDetailDTO [playerId=" + playerId + ", playerName=" + playerName + ", playerEnglishName="
-				+ playerEnglishName + ", playerImageUrl=" + playerImageUrl + ", bitrhDate=" + bitrhDate
-				+ ", firstDebut=" + firstDebut + ", tourDebut=" + tourDebut + ", koreanTourDebut=" + koreanTourDebut
-				+ ", contract=" + contract + ", affiliatedTeam=" + affiliatedTeam + ", performance=" + performance
-				+ ", genesisRecord=" + genesisRecord + ", careerList=" + careerList + "]";
-	}
-
 	public PerformanceDTO getPerformance() {
 		return performance;
 	}
@@ -120,11 +115,11 @@ public class PlayerDetailDTO extends PlayerDTO {
 		this.performance = performance;
 	}
 
-	public genesisRecordDTO getGenesisRecord() {
+	public GenesisRecordDTO getGenesisRecord() {
 		return genesisRecord;
 	}
 
-	public void setGenesisRecord(genesisRecordDTO genesisRecord) {
+	public void setGenesisRecord(GenesisRecordDTO genesisRecord) {
 		this.genesisRecord = genesisRecord;
 	}
 
@@ -136,11 +131,22 @@ public class PlayerDetailDTO extends PlayerDTO {
 		this.careerList = careerList;
 	}
 
+	@Override
+	public String toString() {
+		return "PlayerDetailDTO [playerId=" + playerId + ", playerName=" + playerName + ", playerEnglishName="
+				+ playerEnglishName + ", playerImageUrl=" + playerImageUrl + ", bitrhDate=" + bitrhDate
+				+ ", firstDebut=" + firstDebut + ", tourDebut=" + tourDebut + ", koreanTourDebut=" + koreanTourDebut
+				+ ", contract=" + contract + ", affiliatedTeam=" + affiliatedTeam + ", performance=" + performance
+				+ ", genesisRecord=" + genesisRecord + ", careerList=" + careerList + "]";
+	}
 
 
-
-
-	public static class PerformanceDTO {
+	@JsonIgnoreProperties(ignoreUnknown = true)
+	@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+	public static class PerformanceDTO implements Serializable {
+		
+		private static final long serialVersionUID = -4072947338857701237L;
+		
 		private String scoreAvg;   
 		private String birdieAvg;   
 		private String putAvg;   
@@ -192,17 +198,21 @@ public class PlayerDetailDTO extends PlayerDTO {
 		} 
 	}
 	
-	public static class genesisRecordDTO {
+	
+	@JsonIgnoreProperties(ignoreUnknown = true)
+	@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+	public static class GenesisRecordDTO implements Serializable {
 		
-		private Integer point; 
+		private static final long serialVersionUID = -8822503861376598449L;
+		private Float point; 
 		private Integer pointOrder; 
 		private Long prizeMoney; 
 		private Integer prizeMoneyOrder;
 		
-		public Integer getPoint() {
+		public Float getPoint() {
 			return point;
 		}
-		public void setPoint(Integer point) {
+		public void setPoint(Float point) {
 			this.point = point;
 		}
 		public Integer getPointOrder() {
@@ -229,25 +239,32 @@ public class PlayerDetailDTO extends PlayerDTO {
 					+ ", prizeMoneyOrder=" + prizeMoneyOrder + "]";
 		}
 		
-		public static class CareerDTO {
-			private String careerTitle;
-			private List<String> contentList;
-			public String getCareerTitle() {
-				return careerTitle;
-			}
-			public void setCareerTitle(String careerTitle) {
-				this.careerTitle = careerTitle;
-			}
-			public List<String> getContentList() {
-				return contentList;
-			}
-			public void setContentList(List<String> contentList) {
-				this.contentList = contentList;
-			}
-			@Override
-			public String toString() {
-				return "CareerDTO [careerTitle=" + careerTitle + ", contentList=" + contentList + "]";
-			}
+		
+	}
+	
+	
+	@JsonIgnoreProperties(ignoreUnknown = true)
+	@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+	public static class CareerDTO implements Serializable {
+		private static final long serialVersionUID = -4750559773999199434L;
+		
+		private String careerTitle;
+		private List<String> contentList;
+		public String getCareerTitle() {
+			return careerTitle;
+		}
+		public void setCareerTitle(String careerTitle) {
+			this.careerTitle = careerTitle;
+		}
+		public List<String> getContentList() {
+			return contentList;
+		}
+		public void setContentList(List<String> contentList) {
+			this.contentList = contentList;
+		}
+		@Override
+		public String toString() {
+			return "CareerDTO [careerTitle=" + careerTitle + ", contentList=" + contentList + "]";
 		}
 	}
 
