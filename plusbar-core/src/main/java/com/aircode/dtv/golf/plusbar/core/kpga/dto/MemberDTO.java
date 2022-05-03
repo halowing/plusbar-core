@@ -18,7 +18,7 @@ public class MemberDTO implements Serializable {
 	private String classType;  		 			// "TP",
 	private String userName;   					// "김주형",
 	
-	@JsonAlias("userEnName")
+	@JsonAlias("uerEnName")
 	private String enName;   					// null,
 	private String enLastName;   				// "KIM",
 	private String enFirstName;   				// "Joohyung",
