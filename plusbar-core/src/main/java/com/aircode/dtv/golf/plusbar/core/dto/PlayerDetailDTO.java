@@ -17,9 +17,9 @@ public class PlayerDetailDTO extends PlayerDTO {
 	private String playerEnglishName;   // "",
 	private String playerImageUrl;   // "",
 	private String bitrhDate;   // "",
-	private String firstDebut;   // "",
-	private String tourDebut;   // "",
-	private String koreanTourDebut;   // "",
+	private String firstDebut;   // 최초 입회,
+	private String tourDebut;   // 투어프로 입회,
+	private String koreanTourDebut;   // 코리안투어 데뷔,
 	private String contract;   // "",
 	private String affiliatedTeam;   // "",
 	
