@@ -11,7 +11,7 @@ public class ChannelVO {
 	private boolean homeButtonUse;
 	private Integer homeDelayTime;
 	private boolean show;
-	
+	private String appVersion;
 	
 	
 	public String getChannelId() {
@@ -56,12 +56,17 @@ public class ChannelVO {
 	public void setShow(boolean show) {
 		this.show = show;
 	}
+	public String getAppVersion() {
+		return appVersion;
+	}
+	public void setAppVersion(String appVersion) {
+		this.appVersion = appVersion;
+	}
 	@Override
 	public String toString() {
 		return "ChannelVO [channelId=" + channelId + ", channelName=" + channelName + ", refreshRate=" + refreshRate
 				+ ", unableMenuList=" + Arrays.toString(unableMenuList) + ", homeButtonUse=" + homeButtonUse
-				+ ", homeDelayTime=" + homeDelayTime + ", show=" + show + "]";
+				+ ", homeDelayTime=" + homeDelayTime + ", show=" + show + ", appVersion=" + appVersion + "]";
 	}
-	
 	
 }
