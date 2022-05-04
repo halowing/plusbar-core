@@ -7,6 +7,8 @@ import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 /**
  * 광고주 정보
@@ -16,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class SponsorDTO implements Serializable {
 	
 	private static final long serialVersionUID = 7107180519133172532L;

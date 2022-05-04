@@ -5,6 +5,8 @@ import java.io.Serializable;
 import com.aircode.dtv.golf.plusbar.core.code.ScoreCode;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 /**
  * 각 홀별 PAR 수와 득득점 스코어 상세 정보 
@@ -14,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class HoleScoreDetailDTO extends HoleScoreDTO implements Serializable {
 	
 

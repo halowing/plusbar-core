@@ -5,9 +5,12 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class PlayerDetailDTO extends PlayerDTO {
 	
 	private static final long serialVersionUID = -8615940689406589846L;
@@ -143,6 +146,7 @@ public class PlayerDetailDTO extends PlayerDTO {
 
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+	@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 	public static class PerformanceDTO implements Serializable {
 		
 		private static final long serialVersionUID = -4072947338857701237L;
@@ -201,6 +205,7 @@ public class PlayerDetailDTO extends PlayerDTO {
 	
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+	@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 	public static class GenesisRecordDTO implements Serializable {
 		
 		private static final long serialVersionUID = -8822503861376598449L;
@@ -245,6 +250,7 @@ public class PlayerDetailDTO extends PlayerDTO {
 	
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+	@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 	public static class CareerDTO implements Serializable {
 		private static final long serialVersionUID = -4750559773999199434L;
 		

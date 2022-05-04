@@ -12,12 +12,12 @@ import javax.validation.constraints.Past;
 import com.aircode.dtv.golf.plusbar.core.code.VideoResolution;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-@JsonNaming(value = SnakeCaseStrategy.class)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class VodInfoDTO implements Serializable {
 
 	private static final long serialVersionUID = -7855570639626855914L;

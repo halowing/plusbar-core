@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 /**
  * 방송 스케줄 정보
@@ -20,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class OnAirScheduleDTO implements Serializable {
 
 	private static final long serialVersionUID = -5421744748452626641L;

@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
@@ -23,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class TeamScheduleDTO implements Serializable {
 	
 	private static final long serialVersionUID = 2701891001915999247L;
