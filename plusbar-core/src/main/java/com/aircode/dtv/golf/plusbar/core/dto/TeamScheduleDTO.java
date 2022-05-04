@@ -52,7 +52,7 @@ public class TeamScheduleDTO implements Serializable {
 	
 	@NotEmpty
 	@Valid
-	private List<PlayerDTO> palyerList;
+	private List<PlayerDTO> playerList;
 
 	public int getOrder() {
 		return order;
@@ -86,14 +86,15 @@ public class TeamScheduleDTO implements Serializable {
 		this.teeDate = teeDate;
 	}
 
-	public List<PlayerDTO> getPalyerList() {
-		return palyerList;
+	
+	public List<PlayerDTO> getPlayerList() {
+		return playerList;
 	}
 
-	public void setPalyerList(List<PlayerDTO> palyerList) {
-		this.palyerList = palyerList;
+	public void setPlayerList(List<PlayerDTO> playerList) {
+		this.playerList = playerList;
 	}
-	
+
 	public String getGameId() {
 		return gameId;
 	}
@@ -122,6 +123,6 @@ public class TeamScheduleDTO implements Serializable {
 	public String toString() {
 		return "TeamScheduleDTO [teamId=" + teamId + ", gameId=" + gameId + ", roundIdx=" + roundIdx + ", order="
 				+ order + ", teePosition=" + teePosition + ", teeTime=" + teeTime + ", teeDate=" + teeDate
-				+ ", palyerList=" + palyerList + "]";
+				+ ", playerList=" + playerList + "]";
 	}
 }
