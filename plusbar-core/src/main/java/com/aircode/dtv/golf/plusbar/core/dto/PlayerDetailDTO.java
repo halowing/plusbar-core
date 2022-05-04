@@ -19,7 +19,7 @@ public class PlayerDetailDTO extends PlayerDTO {
 	private String playerName;   // "",
 	private String playerEnglishName;   // "",
 	private String playerImageUrl;   // "",
-	private String bitrhDate;   // "",
+	private String birthDate;   // "",
 	private String firstDebut;   // 최초 입회,
 	private String tourDebut;   // 투어프로 입회,
 	private String koreanTourDebut;   // 코리안투어 데뷔,
@@ -62,12 +62,20 @@ public class PlayerDetailDTO extends PlayerDTO {
 		this.playerImageUrl = playerImageUrl;
 	}
 
-	public String getBitrhDate() {
-		return bitrhDate;
+	
+
+	/**
+	 * @return the birthDate
+	 */
+	public String getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBitrhDate(String bitrhDate) {
-		this.bitrhDate = bitrhDate;
+	/**
+	 * @param birthDate the birthDate to set
+	 */
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getFirstDebut() {
@@ -137,7 +145,7 @@ public class PlayerDetailDTO extends PlayerDTO {
 	@Override
 	public String toString() {
 		return "PlayerDetailDTO [playerId=" + playerId + ", playerName=" + playerName + ", playerEnglishName="
-				+ playerEnglishName + ", playerImageUrl=" + playerImageUrl + ", bitrhDate=" + bitrhDate
+				+ playerEnglishName + ", playerImageUrl=" + playerImageUrl + ", birthDate=" + birthDate
 				+ ", firstDebut=" + firstDebut + ", tourDebut=" + tourDebut + ", koreanTourDebut=" + koreanTourDebut
 				+ ", contract=" + contract + ", affiliatedTeam=" + affiliatedTeam + ", performance=" + performance
 				+ ", genesisRecord=" + genesisRecord + ", careerList=" + careerList + "]";
