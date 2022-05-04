@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum ScoreCode {
 	
-	@JsonProperty("BOGEY+")
-	BOGEY_PLUS, 
-	BOGEY, 
+	BETTER,
+	BIRDIE,
 	PAR, 
-	BIRDIE, 
-	BETTER
-
+	BOGEY, 
+	
+	@JsonProperty("BOGEY+")
+	BOGEY_PLUS
 }
