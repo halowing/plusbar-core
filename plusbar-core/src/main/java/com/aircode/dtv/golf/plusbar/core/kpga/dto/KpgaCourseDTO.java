@@ -2,6 +2,7 @@ package com.aircode.dtv.golf.plusbar.core.kpga.dto;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
@@ -13,6 +14,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
  * @author "aircode"
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(value = PropertyNamingStrategies.LowerCamelCaseStrategy.class)
 public class KpgaCourseDTO implements Serializable {
 	
