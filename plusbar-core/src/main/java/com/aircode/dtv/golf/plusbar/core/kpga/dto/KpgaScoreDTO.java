@@ -1,4 +1,4 @@
-package com.aircode.dtv.golf.plusbar.core.kpga.dto.sk;
+package com.aircode.dtv.golf.plusbar.core.kpga.dto;
 
 import java.io.Serializable;
 
@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
  */
 @JsonNaming(value = PropertyNamingStrategies.LowerCamelCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SkScoreDTO implements Serializable {
+public class KpgaScoreDTO implements Serializable {
 
 	private static final long serialVersionUID = 3116201584856006474L;
 	

@@ -1,7 +1,8 @@
-package com.aircode.dtv.golf.plusbar.core.kpga.dto.sk;
+package com.aircode.dtv.golf.plusbar.core.kpga.dto;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
@@ -13,27 +14,30 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
  * @author "aircode"
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(value = PropertyNamingStrategies.LowerCamelCaseStrategy.class)
-public class SkGroupDTO implements Serializable {
+public class KpgaGroupDTO implements Serializable {
 
 	private static final long serialVersionUID = -7416809031899849136L;
 	
 	private String gameId       ;
-	private Integer expGroupNo   ;
+	private String expGroupNo   ;
+	private String startTimeId	;
 	private String startInOut   ;
 	private String startTime    ;
 	private String memberId     ;
 	private String playerName   ;
+	
 	public String getGameId() {
 		return gameId;
 	}
 	public void setGameId(String gameId) {
 		this.gameId = gameId;
 	}
-	public Integer getExpGroupNo() {
+	public String getExpGroupNo() {
 		return expGroupNo;
 	}
-	public void setExpGroupNo(Integer expGroupNo) {
+	public void setExpGroupNo(String expGroupNo) {
 		this.expGroupNo = expGroupNo;
 	}
 	public String getStartInOut() {
@@ -60,11 +64,19 @@ public class SkGroupDTO implements Serializable {
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
 	}
+	
+	public String getStartTimeId() {
+		return startTimeId;
+	}
+	public void setStartTimeId(String startTimeId) {
+		this.startTimeId = startTimeId;
+	}
 	@Override
 	public String toString() {
-		return "SkGroupDTO [gameId=" + gameId + ", expGroupNo=" + expGroupNo + ", startInOut=" + startInOut
-				+ ", startTime=" + startTime + ", memberId=" + memberId + ", playerName=" + playerName + "]";
+		return "KpgaGroupDTO [gameId=" + gameId + ", expGroupNo=" + expGroupNo + ", startTimeId=" + startTimeId
+				+ ", startInOut=" + startInOut + ", startTime=" + startTime + ", memberId=" + memberId + ", playerName="
+				+ playerName + "]";
 	}
-
+	
 	
 }
