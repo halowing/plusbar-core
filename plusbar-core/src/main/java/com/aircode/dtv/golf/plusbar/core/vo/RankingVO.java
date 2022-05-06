@@ -3,8 +3,9 @@ package com.aircode.dtv.golf.plusbar.core.vo;
 public class RankingVO {
 
 	private String gameId;
-	private String playerId;
 	private Integer roundIdx;
+	private String playerId;
+	
 	private Integer rankingOrder;
 	private String ranking;
 	private String holeIdx;
