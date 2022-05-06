@@ -1,9 +1,35 @@
-package com.aircode.dtv.golf.plusbar.core.vo;
+package com.aircode.dtv.golf.plusbar.core.kpga.dto;
 
-public class CourseVO {
+import java.io.Serializable;
+
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+/**
+ * 대회 코스 정보
+ * 
+ * KPGA SK API 연동 규격 
+ * 
+ * @author "aircode"
+ *
+ */
+@JsonNaming(value = PropertyNamingStrategies.LowerCamelCaseStrategy.class)
+public class KpgaCourseDTO implements Serializable {
 	
-	private String courseId;
-	private String courseName;
+	private static final long serialVersionUID = -5486035633384913107L;
+	
+	private String gameId            ;
+//	private Integer gameCourseNo      ;
+//	private String regionCode        ;
+//	private String gameGroupCode     ;
+//	private String golfclubId        ;
+	private String courseId          ;
+//	private String golfclubName      ;
+	private String courseName        ;
+//	private String gameStartDate     ;
+//	private String gameEndDate       ;
+//	private Integer gamePlayerCnt     ;
+//	private Integer gameSubgroupCnt   ;
 	private Integer holePar1          ;
 	private Integer holePar2          ;
 	private Integer holePar3          ;
@@ -25,6 +51,61 @@ public class CourseVO {
 	private Integer holeParIn         ;
 	private Integer holeParOut        ;
 	private Integer holeParSum        ;
+//	private Integer holeYard1         ;
+//	private Integer holeYard2         ;
+//	private Integer holeYard3         ;
+//	private Integer holeYard4         ;
+//	private Integer holeYard5         ;
+//	private Integer holeYard6         ;
+//	private Integer holeYard7         ;
+//	private Integer holeYard8         ;
+//	private Integer holeYard9         ;
+//	private Integer holeYard10        ;
+//	private Integer holeYard11        ;
+//	private Integer holeYard12        ;
+//	private Integer holeYard13        ;
+//	private Integer holeYard14        ;
+//	private Integer holeYard15        ;
+//	private Integer holeYard16        ;
+//	private Integer holeYard17        ;
+//	private Integer holeYard18        ;
+//	private Integer holeYardOut       ;
+//	private Integer holeYardIn        ;
+//	private Integer holeYardSum       ;
+//	private Integer holeMeter1        ;
+//	private Integer holeMeter2        ;
+//	private Integer holeMeter3        ;
+//	private Integer holeMeter4        ;
+//	private Integer holeMeter5        ;
+//	private Integer holeMeter6        ;
+//	private Integer holeMeter7        ;
+//	private Integer holeMeter8        ;
+//	private Integer holeMeter9        ;
+//	private Integer holeMeter10       ;
+//	private Integer holeMeter11       ;
+//	private Integer holeMeter12       ;
+//	private Integer holeMeter13       ;
+//	private Integer holeMeter14       ;
+//	private Integer holeMeter15       ;
+//	private Integer holeMeter16       ;
+//	private Integer holeMeter17       ;
+//	private Integer holeMeter18       ;
+//	private Integer holeMeterOut      ;
+//	private Integer holeMeterIn       ;
+//	private Integer holeMeterSum      ;
+	@Override
+	public String toString() {
+		return "SkCourseDTO [gameId=" + gameId + ", courseId=" + courseId + ", courseName=" + courseName + ", holePar1="
+				+ holePar1 + ", holePar2=" + holePar2 + ", holePar3=" + holePar3 + ", holePar4=" + holePar4
+				+ ", holePar5=" + holePar5 + ", holePar6=" + holePar6 + ", holePar7=" + holePar7 + ", holePar8="
+				+ holePar8 + ", holePar9=" + holePar9 + ", holePar10=" + holePar10 + ", holePar11=" + holePar11
+				+ ", holePar12=" + holePar12 + ", holePar13=" + holePar13 + ", holePar14=" + holePar14 + ", holePar15="
+				+ holePar15 + ", holePar16=" + holePar16 + ", holePar17=" + holePar17 + ", holePar18=" + holePar18
+				+ ", holeParIn=" + holeParIn + ", holeParOut=" + holeParOut + ", holeParSum=" + holeParSum + "]";
+	}
+	public String getGameId() {
+		return gameId;
+	}
 	public String getCourseId() {
 		return courseId;
 	}
@@ -93,6 +174,9 @@ public class CourseVO {
 	}
 	public Integer getHoleParSum() {
 		return holeParSum;
+	}
+	public void setGameId(String gameId) {
+		this.gameId = gameId;
 	}
 	public void setCourseId(String courseId) {
 		this.courseId = courseId;
@@ -163,16 +247,8 @@ public class CourseVO {
 	public void setHoleParSum(Integer holeParSum) {
 		this.holeParSum = holeParSum;
 	}
-	@Override
-	public String toString() {
-		return "CourseVO [courseId=" + courseId + ", courseName=" + courseName + ", holePar1=" + holePar1
-				+ ", holePar2=" + holePar2 + ", holePar3=" + holePar3 + ", holePar4=" + holePar4 + ", holePar5="
-				+ holePar5 + ", holePar6=" + holePar6 + ", holePar7=" + holePar7 + ", holePar8=" + holePar8
-				+ ", holePar9=" + holePar9 + ", holePar10=" + holePar10 + ", holePar11=" + holePar11 + ", holePar12="
-				+ holePar12 + ", holePar13=" + holePar13 + ", holePar14=" + holePar14 + ", holePar15=" + holePar15
-				+ ", holePar16=" + holePar16 + ", holePar17=" + holePar17 + ", holePar18=" + holePar18 + ", holeParIn="
-				+ holeParIn + ", holeParOut=" + holeParOut + ", holeParSum=" + holeParSum + "]";
-	}
 	
 	
+	
+
 }
