@@ -2,6 +2,7 @@ package com.aircode.dtv.golf.plusbar.core.vo;
 
 public class CourseVO {
 	
+	private String gameId;
 	private String courseId;
 	private String courseName;
 	private Integer holePar1          ;
@@ -25,6 +26,14 @@ public class CourseVO {
 	private Integer holeParIn         ;
 	private Integer holeParOut        ;
 	private Integer holeParSum        ;
+	
+	
+	public String getGameId() {
+		return gameId;
+	}
+	public void setGameId(String gameId) {
+		this.gameId = gameId;
+	}
 	public String getCourseId() {
 		return courseId;
 	}
@@ -165,14 +174,13 @@ public class CourseVO {
 	}
 	@Override
 	public String toString() {
-		return "CourseVO [courseId=" + courseId + ", courseName=" + courseName + ", holePar1=" + holePar1
-				+ ", holePar2=" + holePar2 + ", holePar3=" + holePar3 + ", holePar4=" + holePar4 + ", holePar5="
-				+ holePar5 + ", holePar6=" + holePar6 + ", holePar7=" + holePar7 + ", holePar8=" + holePar8
-				+ ", holePar9=" + holePar9 + ", holePar10=" + holePar10 + ", holePar11=" + holePar11 + ", holePar12="
-				+ holePar12 + ", holePar13=" + holePar13 + ", holePar14=" + holePar14 + ", holePar15=" + holePar15
-				+ ", holePar16=" + holePar16 + ", holePar17=" + holePar17 + ", holePar18=" + holePar18 + ", holeParIn="
-				+ holeParIn + ", holeParOut=" + holeParOut + ", holeParSum=" + holeParSum + "]";
+		return "CourseVO [gameId=" + gameId + ", courseId=" + courseId + ", courseName=" + courseName + ", holePar1="
+				+ holePar1 + ", holePar2=" + holePar2 + ", holePar3=" + holePar3 + ", holePar4=" + holePar4
+				+ ", holePar5=" + holePar5 + ", holePar6=" + holePar6 + ", holePar7=" + holePar7 + ", holePar8="
+				+ holePar8 + ", holePar9=" + holePar9 + ", holePar10=" + holePar10 + ", holePar11=" + holePar11
+				+ ", holePar12=" + holePar12 + ", holePar13=" + holePar13 + ", holePar14=" + holePar14 + ", holePar15="
+				+ holePar15 + ", holePar16=" + holePar16 + ", holePar17=" + holePar17 + ", holePar18=" + holePar18
+				+ ", holeParIn=" + holeParIn + ", holeParOut=" + holeParOut + ", holeParSum=" + holeParSum + "]";
 	}
-	
 	
 }

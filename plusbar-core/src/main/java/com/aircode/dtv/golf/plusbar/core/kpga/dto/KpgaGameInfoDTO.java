@@ -25,13 +25,12 @@ public class KpgaGameInfoDTO implements Serializable {
 	private Integer gameRoundCnt       ;
 	private String  gameOpenDate	   ;
 	private String  gameCloseDate	   ;
-	private String  courseId		   ;
 	@Override
 	public String toString() {
 		return "KpgaGameInfoDTO [gameId=" + gameId + ", seriesId=" + seriesId + ", gameName=" + gameName
 				+ ", gamePrize=" + gamePrize + ", amtUnit=" + amtUnit + ", gamePlayerCnt=" + gamePlayerCnt
 				+ ", gameRoundCnt=" + gameRoundCnt + ", gameOpenDate=" + gameOpenDate + ", gameCloseDate="
-				+ gameCloseDate + ", courseId=" + courseId + "]";
+				+ gameCloseDate + "]";
 	}
 	/**
 	 * @return the gameId
@@ -88,12 +87,6 @@ public class KpgaGameInfoDTO implements Serializable {
 		return gameCloseDate;
 	}
 	/**
-	 * @return the courseId
-	 */
-	public String getCourseId() {
-		return courseId;
-	}
-	/**
 	 * @param gameId the gameId to set
 	 */
 	public void setGameId(String gameId) {
@@ -146,12 +139,6 @@ public class KpgaGameInfoDTO implements Serializable {
 	 */
 	public void setGameCloseDate(String gameCloseDate) {
 		this.gameCloseDate = gameCloseDate;
-	}
-	/**
-	 * @param courseId the courseId to set
-	 */
-	public void setCourseId(String courseId) {
-		this.courseId = courseId;
 	}
 	
 	
