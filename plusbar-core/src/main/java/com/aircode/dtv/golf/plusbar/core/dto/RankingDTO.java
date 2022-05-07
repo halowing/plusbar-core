@@ -24,6 +24,8 @@ public class RankingDTO implements Serializable {
 	
 	private int order = 0;
 	
+	private Integer roundIdx;
+	
 	@NotBlank
 	private String ranking;
 	
@@ -85,13 +87,19 @@ public class RankingDTO implements Serializable {
 	public void setTodayScore(String todayScore) {
 		this.todayScore = todayScore;
 	}
+	
+	public Integer getRoundIdx() {
+		return roundIdx;
+	}
+	public void setRoundIdx(Integer roundIdx) {
+		this.roundIdx = roundIdx;
+	}
 	@Override
 	public String toString() {
-		return "RankingDTO [order=" + order + ", ranking=" + ranking + ", playerId=" + playerId + ", playerName="
-				+ playerName + ", holeIdx=" + holeIdx + ", totalScore=" + totalScore + ", todayScore=" + todayScore
-				+ "]";
+		return "RankingDTO [order=" + order + ", roundIdx=" + roundIdx + ", ranking=" + ranking + ", playerId="
+				+ playerId + ", playerName=" + playerName + ", holeIdx=" + holeIdx + ", totalScore=" + totalScore
+				+ ", todayScore=" + todayScore + "]";
 	}
-	
 	
 	
 }

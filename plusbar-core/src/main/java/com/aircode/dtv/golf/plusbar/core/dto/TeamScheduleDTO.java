@@ -1,6 +1,7 @@
 package com.aircode.dtv.golf.plusbar.core.dto;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -44,6 +45,8 @@ public class TeamScheduleDTO implements Serializable {
 	@NotBlank
 	private String teePosition;
 	
+	private LocalDate onAirDate;
+	
 	@NotNull
 	@JsonFormat(shape = Shape.STRING, pattern = "HH:mm")
 	private LocalTime teeTime;
@@ -53,6 +56,16 @@ public class TeamScheduleDTO implements Serializable {
 	@NotEmpty
 	@Valid
 	private List<PlayerDTO> playerList;
+
+	
+	
+	public LocalDate getOnAirDate() {
+		return onAirDate;
+	}
+
+	public void setOnAirDate(LocalDate onAirDate) {
+		this.onAirDate = onAirDate;
+	}
 
 	public int getOrder() {
 		return order;
@@ -122,7 +135,9 @@ public class TeamScheduleDTO implements Serializable {
 	@Override
 	public String toString() {
 		return "TeamScheduleDTO [teamId=" + teamId + ", gameId=" + gameId + ", roundIdx=" + roundIdx + ", order="
-				+ order + ", teePosition=" + teePosition + ", teeTime=" + teeTime + ", teeDate=" + teeDate
-				+ ", playerList=" + playerList + "]";
+				+ order + ", teePosition=" + teePosition + ", onAirDate=" + onAirDate + ", teeTime=" + teeTime
+				+ ", teeDate=" + teeDate + ", playerList=" + playerList + "]";
 	}
+
+	
 }
