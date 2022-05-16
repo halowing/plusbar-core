@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 
 import com.halowing.spring.web.dto.response.DefaultResponse;
+import com.halowing.util.StringUtility;
 
 @RestController
 public class ErrorController extends AbstractErrorController {
@@ -42,6 +43,8 @@ public class ErrorController extends AbstractErrorController {
 			int statusCode = Integer.valueOf(status.toString());
 			httpStatus = HttpStatus.valueOf(statusCode);
 			message = (String) request.getAttribute(RequestDispatcher.ERROR_MESSAGE);
+			if(StringUtility.isBlank(message))
+				message = httpStatus.getReasonPhrase();
 			log.debug("statusCode = {}, message = {}",statusCode, message);
 		}
 		
