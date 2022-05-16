@@ -6,6 +6,8 @@ import java.util.Arrays;
 import com.aircode.dtv.golf.plusbar.core.vo.ChannelVO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 /**
  * Channel 상태 관리 DTO
@@ -15,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.ALWAYS)
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ChannelDTO implements Serializable {
 
 	private static final long serialVersionUID = 7532166921258697688L;
