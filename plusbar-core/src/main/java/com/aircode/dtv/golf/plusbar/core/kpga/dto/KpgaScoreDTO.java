@@ -180,11 +180,29 @@ public class KpgaScoreDTO implements Serializable {
 	
 	
 	public Integer getOutScore() {
-		return hole1 + hole2 + hole3 + hole4 + hole5 + hole6 + hole7 + hole8 + hole9 ;
+		
+		
+		return getSum(hole1 , hole2 , hole3 , hole4 , hole5 , hole6 , hole7 , hole8 , hole9) ;
 	}
 	
 	public Integer getInScore() {
-		return hole10 + hole11 + hole12 + hole13 + hole14 + hole15 + hole16 + hole17 + hole18; 
+		
+		return getSum(hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18);
+		
+	}
+	
+	private Integer getSum(Integer... arr ) {
+		
+		Integer sum = null;
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i] == null) continue;
+			
+			if(sum == null) sum = arr[i];
+			
+			sum += arr[i];
+		}
+		
+		return sum;
 	}
 	
 	private Integer getHoleCode(Integer holeCode) {
