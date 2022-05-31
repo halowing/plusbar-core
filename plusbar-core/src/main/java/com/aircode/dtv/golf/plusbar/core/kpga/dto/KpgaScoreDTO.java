@@ -21,20 +21,31 @@ public class KpgaScoreDTO implements Serializable {
 
 	private static final long serialVersionUID = 3116201584856006474L;
 	
+	@JsonAlias(value = {"game_id"})
 	private String  gameId            ;
 	
-	@JsonAlias(value = {"roundNo"})
+	@JsonAlias(value = {"roundNo","round_no"})
 	private Integer roundIdx;
 	
+	@JsonAlias(value = {"rank_no"})
 	private String  rankNo            ;			// 랭킹 , 순위 
+	
+	@JsonAlias(value = {"start_in_out"})
 	private String  startInOut        ;			// IN/OUT
+	
+	@JsonAlias(value = {"rank_underpar"})
 	private Integer rankUnderpar      ;			// 누적 토탈 타수 , -6
+	
+	@JsonAlias(value = {"udpar_sum_tot"})
 	private Integer udparSumTot       ;			// 라운드 토탈 스코어, -6
 	
-	@JsonAlias(value = {"memberId"})
+	@JsonAlias(value = {"memberId", "member_id"})
 	private String playerId;
 	
+	@JsonAlias(value = {"start_time_id"})
 	private Integer startTimeId       ;			// 선수 조 번호
+	
+	@JsonAlias(value = {"player_name"})
 	private String  playerName        ;
 //	private Integer holePar1          ;			// 1홀 기준타 , 4
 //	private Integer holePar2          ;
@@ -55,127 +66,140 @@ public class KpgaScoreDTO implements Serializable {
 //	private Integer holePar17         ;
 //	private Integer holePar18         ;
 	
-	@JsonAlias(value = {"score1"})
+	@JsonAlias(value = {"score1","score_1"})
 	private Integer hole1;
 	
-	@JsonAlias(value = {"score2"})
+	@JsonAlias(value = {"score2","score_2"})
 	private Integer hole2;
 	
-	@JsonAlias(value = {"score3"})
+	@JsonAlias(value = {"score3","score_3"})
 	private Integer hole3;
 	
-	@JsonAlias(value = {"score4"})
+	@JsonAlias(value = {"score4","score_4"})
 	private Integer hole4;
 	
-	@JsonAlias(value = {"score5"})
+	@JsonAlias(value = {"score5","score_5"})
 	private Integer hole5;
 	
-	@JsonAlias(value = {"score6"})
+	@JsonAlias(value = {"score6","score_6"})
 	private Integer hole6;
 	
-	@JsonAlias(value = {"score7"})
+	@JsonAlias(value = {"score7","score_7"})
 	private Integer hole7;
 	
-	@JsonAlias(value = {"score8"})
+	@JsonAlias(value = {"score8","score_8"})
 	private Integer hole8;
 	
-	@JsonAlias(value = {"score9"})
+	@JsonAlias(value = {"score9","score_9"})
 	private Integer hole9;
 	
-	@JsonAlias(value = {"score10"})
+	@JsonAlias(value = {"score10","score_10"})
 	private Integer hole10;
 	
-	@JsonAlias(value = {"score11"})
+	@JsonAlias(value = {"score11","score_11"})
 	private Integer hole11;
 	
-	@JsonAlias(value = {"score12"})
+	@JsonAlias(value = {"score12","score_12"})
 	private Integer hole12;
 	
-	@JsonAlias(value = {"score13"})
+	@JsonAlias(value = {"score13","score_13"})
 	private Integer hole13;
 	
-	@JsonAlias(value = {"score14"})
+	@JsonAlias(value = {"score14","score_14"})
 	private Integer hole14;
 	
-	@JsonAlias(value = {"score15"})
+	@JsonAlias(value = {"score15","score_15"})
 	private Integer hole15;
 	
-	@JsonAlias(value = {"score16"})
+	@JsonAlias(value = {"score16","score_16"})
 	private Integer hole16;
 	
-	@JsonAlias(value = {"score17"})
+	@JsonAlias(value = {"score17","score_17"})
 	private Integer hole17;
 	
-	@JsonAlias(value = {"score18"})
+	@JsonAlias(value = {"score18","score_18"})
 	private Integer hole18;
 	
-	@JsonAlias(value = {"udpar1"})    
+	@JsonAlias(value = {"udpar1","udpar_1"})    
 	private Integer holeCode1;
 	
-	@JsonAlias(value = {"udpar2"})    
+	@JsonAlias(value = {"udpar2","udpar_2"})    
 	private Integer holeCode2;
 	
-	@JsonAlias(value = {"udpar3"})    
+	@JsonAlias(value = {"udpar3","udpar_3"})    
 	private Integer holeCode3;
 	
-	@JsonAlias(value = {"udpar4"})    
+	@JsonAlias(value = {"udpar4","udpar_4"})    
 	private Integer holeCode4;
 	
-	@JsonAlias(value = {"udpar5"})    
+	@JsonAlias(value = {"udpar5","udpar_5"})    
 	private Integer holeCode5;
 	
-	@JsonAlias(value = {"udpar6"})    
+	@JsonAlias(value = {"udpar6","udpar_6"})    
 	private Integer holeCode6;
 	
-	@JsonAlias(value = {"udpar7"})    
+	@JsonAlias(value = {"udpar7","udpar_7"})    
 	private Integer holeCode7;
 	
-	@JsonAlias(value = {"udpar8"})    
+	@JsonAlias(value = {"udpar8","udpar_8"})    
 	private Integer holeCode8;
 	
-	@JsonAlias(value = {"udpar9"})    
+	@JsonAlias(value = {"udpar9","udpar_9"})    
 	private Integer holeCode9;
 	
-	@JsonAlias(value = {"udpar10"})    
+	@JsonAlias(value = {"udpar10","udpar_10"})    
 	private Integer holeCode10;
 	
-	@JsonAlias(value = {"udpar11"})    
+	@JsonAlias(value = {"udpar11","udpar_11"})    
 	private Integer holeCode11;
 	
-	@JsonAlias(value = {"udpar12"})    
+	@JsonAlias(value = {"udpar12","udpar_12"})    
 	private Integer holeCode12;
 	
-	@JsonAlias(value = {"udpar13"})    
+	@JsonAlias(value = {"udpar13","udpar_13"})    
 	private Integer holeCode13;
 	
-	@JsonAlias(value = {"udpar14"})    
+	@JsonAlias(value = {"udpar14","udpar_14"})    
 	private Integer holeCode14;
 	
-	@JsonAlias(value = {"udpar15"})    
+	@JsonAlias(value = {"udpar15","udpar_15"})    
 	private Integer holeCode15;
 	
-	@JsonAlias(value = {"udpar16"})    
+	@JsonAlias(value = {"udpar16","udpar_16"})    
 	private Integer holeCode16;
 	
-	@JsonAlias(value = {"udpar17"})    
+	@JsonAlias(value = {"udpar17","udpar_17"})    
 	private Integer holeCode17;
 	
-	@JsonAlias(value = {"udpar18"})    
+	@JsonAlias(value = {"udpar18","udpar_18"})    
 	private Integer holeCode18;
 	
 	
-	
+	@JsonAlias(value = {"round_end"})
 	private String roundEnd          ;			// 현재 종료홀 , F
 	
-	@JsonAlias(value = {"scoreSumTot"})    			
+	@JsonAlias(value = {"scoreSumTot","score_sum_tot"})    			
 	private Integer totalScore        ;			// 라운드 토탈 타수, 3
 	
+	@JsonAlias(value = {"accu_sum_underpar"})
 	private Integer accuSumUnderpar   ;			// 누적 스코어    , -6
+	
+	@JsonAlias(value = {"accu_sum_score"})
 	private Integer accuSumScore      ;			// 누적 타수      , 65
+	
+	@JsonAlias(value = {"total_hole_cnt"})
 	private Integer totalHoleCnt      ;			// 토탈홀카운트		, 18.0
+	
+	@JsonAlias(value = {"udpar_sum_1"})
 	private Integer udparSum1         ;			// 1라운드 타수
+	
+	@JsonAlias(value = {"udpar_sum_2"})
 	private Integer udparSum2         ;
+	
+	@JsonAlias(value = {"udpar_sum_3"})
 	private Integer udparSum3         ;
+	
+	@JsonAlias(value = {"udpar_sum_4"})
 	private Integer udparSum4         ;			// 0
 	
 	
@@ -216,9 +240,11 @@ public class KpgaScoreDTO implements Serializable {
 		return holeCode;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "SkScoreDTO [gameId=" + gameId + ", roundIdx=" + roundIdx + ", rankNo=" + rankNo + ", startInOut="
+		return "KpgaScoreDTO [gameId=" + gameId + ", roundIdx=" + roundIdx + ", rankNo=" + rankNo + ", startInOut="
 				+ startInOut + ", rankUnderpar=" + rankUnderpar + ", udparSumTot=" + udparSumTot + ", playerId="
 				+ playerId + ", startTimeId=" + startTimeId + ", playerName=" + playerName + ", hole1=" + hole1
 				+ ", hole2=" + hole2 + ", hole3=" + hole3 + ", hole4=" + hole4 + ", hole5=" + hole5 + ", hole6=" + hole6
@@ -233,8 +259,7 @@ public class KpgaScoreDTO implements Serializable {
 				+ ", holeCode18=" + holeCode18 + ", roundEnd=" + roundEnd + ", totalScore=" + totalScore
 				+ ", accuSumUnderpar=" + accuSumUnderpar + ", accuSumScore=" + accuSumScore + ", totalHoleCnt="
 				+ totalHoleCnt + ", udparSum1=" + udparSum1 + ", udparSum2=" + udparSum2 + ", udparSum3=" + udparSum3
-				+ ", udparSum4=" + udparSum4 + ", getOutScore()=" + getOutScore() + ", getInScore()=" + getInScore()
-				+ "]";
+				+ ", udparSum4=" + udparSum4 + "]";
 	}
 
 	/**
