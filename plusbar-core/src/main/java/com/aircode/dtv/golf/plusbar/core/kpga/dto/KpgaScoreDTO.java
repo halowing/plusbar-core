@@ -25,10 +25,12 @@ public class KpgaScoreDTO implements Serializable {
 	private String  gameId            ;
 	
 	@JsonAlias(value = {"roundNo","round_no"})
-	private Integer roundIdx;
+	private String roundNo;
+	
+//	private Integer roundIdx;
 	
 	@JsonAlias(value = {"rank_no"})
-	private String  rankNo            ;			// 랭킹 , 순위 
+	private Integer  rankNo            ;			// 랭킹 , 순위 
 	
 	@JsonAlias(value = {"start_in_out"})
 	private String  startInOut        ;			// IN/OUT
@@ -241,10 +243,9 @@ public class KpgaScoreDTO implements Serializable {
 	}
 
 
-
 	@Override
 	public String toString() {
-		return "KpgaScoreDTO [gameId=" + gameId + ", roundIdx=" + roundIdx + ", rankNo=" + rankNo + ", startInOut="
+		return "KpgaScoreDTO [gameId=" + gameId + ", roundNo=" + roundNo + ", rankNo=" + rankNo + ", startInOut="
 				+ startInOut + ", rankUnderpar=" + rankUnderpar + ", udparSumTot=" + udparSumTot + ", playerId="
 				+ playerId + ", startTimeId=" + startTimeId + ", playerName=" + playerName + ", hole1=" + hole1
 				+ ", hole2=" + hole2 + ", hole3=" + hole3 + ", hole4=" + hole4 + ", hole5=" + hole5 + ", hole6=" + hole6
@@ -273,13 +274,14 @@ public class KpgaScoreDTO implements Serializable {
 	 * @return the roundIdx
 	 */
 	public Integer getRoundIdx() {
-		return roundIdx;
+		if(roundNo ==  null || roundNo.isBlank()) return null;
+		return Integer.valueOf(roundNo);
 	}
 
 	/**
 	 * @return the rankNo
 	 */
-	public String getRankNo() {
+	public Integer getRankNo() {
 		return rankNo;
 	}
 
@@ -651,13 +653,14 @@ public class KpgaScoreDTO implements Serializable {
 	 * @param roundIdx the roundIdx to set
 	 */
 	public void setRoundIdx(Integer roundIdx) {
-		this.roundIdx = roundIdx;
+		if(roundIdx == null ) this.roundNo = null;
+		this.roundNo = ""+roundIdx;
 	}
 
 	/**
 	 * @param rankNo the rankNo to set
 	 */
-	public void setRankNo(String rankNo) {
+	public void setRankNo(Integer rankNo) {
 		this.rankNo = rankNo;
 	}
 
@@ -1017,14 +1020,14 @@ public class KpgaScoreDTO implements Serializable {
 	public void setUdparSum4(Integer udparSum4) {
 		this.udparSum4 = udparSum4;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public String getRoundNo() {
+		return roundNo;
+	}
+
+	public void setRoundNo(String roundNo) {
+		this.roundNo = roundNo;
+	}
 	
 	
 }
