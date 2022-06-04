@@ -223,9 +223,11 @@ public class KpgaScoreDTO implements Serializable {
 		for(int i=0;i<arr.length;i++) {
 			if(arr[i] == null) continue;
 			
-			if(sum == null) sum = arr[i];
-			
-			sum += arr[i];
+			if(sum == null) {
+				sum = arr[i];
+			}else {
+				sum += arr[i];
+			}
 		}
 		
 		return sum;
