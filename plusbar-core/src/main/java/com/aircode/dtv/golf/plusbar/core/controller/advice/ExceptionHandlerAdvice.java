@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.halowing.spring.web.dto.response.DefaultResponse;
+import com.halowing.spring.web.exception.DefaultApplicationException;
 import com.halowing.spring.web.exception.HttpConflictException;
 import com.halowing.spring.web.exception.HttpNotFoundException;
 
@@ -25,14 +26,20 @@ public class ExceptionHandlerAdvice {
 	}
 	
 	@ExceptionHandler(HttpNotFoundException.class)
-	public ResponseEntity<DefaultResponse> othersExceptionHandler(HttpNotFoundException ex){
+	public ResponseEntity<DefaultResponse> httpNotFoundExceptionHandler(HttpNotFoundException ex){
 		log.error("HttpNotFoundException : {}",ex.getMessage());
 		return getErrorResponseEntity(ex.getStatus(), ex.getMessage());
 	}
 	
 	@ExceptionHandler(HttpConflictException.class)
-	public ResponseEntity<DefaultResponse> othersExceptionHandler(HttpConflictException ex){
+	public ResponseEntity<DefaultResponse> httpConflictExceptionHandler(HttpConflictException ex){
 		log.error("HttpConflictException : {}",ex.getMessage());
+		return getErrorResponseEntity(ex.getStatus(), ex.getMessage());
+	}
+	
+	@ExceptionHandler(DefaultApplicationException.class)
+	public ResponseEntity<DefaultResponse> defaultApplicationExceptionHandler(DefaultApplicationException ex){
+		log.error("DefaultApplicationException : {}",ex.getMessage());
 		return getErrorResponseEntity(ex.getStatus(), ex.getMessage());
 	}
 	
