@@ -3,13 +3,13 @@ package com.aircode.dtv.golf.plusbar.core.dto;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import com.aircode.dtv.golf.plusbar.core.code.VideoResolution;
+import com.aircode.dtv.golf.plusbar.core.vo.VodInfoVO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -30,7 +30,6 @@ public class VodInfoDTO implements Serializable {
 	@NotBlank
 	private String playerId;
 	
-	@Max(value = 4)
 	@Min(value = 1)
 	private Integer roundIdx;
 	
@@ -61,6 +60,27 @@ public class VodInfoDTO implements Serializable {
 	
 	
 	public VodInfoDTO() {}
+	
+	public VodInfoDTO(VodInfoVO vo) {
+		
+		this.cdnId 			= vo.getCdnId();
+		this.description 	= vo.getDescription();
+		this.gameId			= vo.getGameId();
+		this.hasAd			= vo.getHasAd();
+		this.isRoundHighlight	= vo.getIsRoundHighlight();
+		this.playerId			= vo.getPlayerId();
+		this.playerName			= vo.getPlayerName();
+		this.playTime			= vo.getPlayTime();
+		this.playUri			= vo.getPlayUri();
+		this.posterUri			= vo.getPosterUri();
+		this.produceDatetime	= vo.getProduceDatetime();
+		this.registDatetime		= vo.getRegistDatetime();
+		this.resolution			= vo.getResolution();
+		this.roundIdx			= vo.getRoundIdx();
+		this.title				= vo.getTitle();
+		this.vodId				= vo.getVodId();
+		
+	}
 	
 	public String getVodId() {
 		return vodId;
