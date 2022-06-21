@@ -6,6 +6,7 @@ public class GameVO {
 	private String seriesId           ;
 	private String gameName;
 	private Long    gamePrize          	;
+	private Long 	winningPrize		;
 	private String  amtUnit            	;  // 상금 단위 "KSW"
 	private Integer gamePlayerCnt      	;
 	private Integer gameRoundCnt       	;
@@ -17,14 +18,14 @@ public class GameVO {
 	
 	
 	
-	
 	@Override
 	public String toString() {
 		return String.format(
-				"GameVO [gameId=%s, seriesId=%s, gameName=%s, gamePrize=%s, amtUnit=%s, gamePlayerCnt=%s, gameRoundCnt=%s, gameOpenDate=%s, gameCloseDate=%s, title=%s, content=%s, gameImageUrl=%s]",
-				gameId, seriesId, gameName, gamePrize, amtUnit, gamePlayerCnt, gameRoundCnt, gameOpenDate,
+				"GameVO [gameId=%s, seriesId=%s, gameName=%s, gamePrize=%s, winningPrize=%s, amtUnit=%s, gamePlayerCnt=%s, gameRoundCnt=%s, gameOpenDate=%s, gameCloseDate=%s, title=%s, content=%s, gameImageUrl=%s]",
+				gameId, seriesId, gameName, gamePrize, winningPrize, amtUnit, gamePlayerCnt, gameRoundCnt, gameOpenDate,
 				gameCloseDate, title, content, gameImageUrl);
 	}
+	
 	public String getGameId() {
 		return gameId;
 	}
@@ -96,6 +97,14 @@ public class GameVO {
 	}
 	public void setGameImageUrl(String gameImageUrl) {
 		this.gameImageUrl = gameImageUrl;
+	}
+
+	public Long getWinningPrize() {
+		return winningPrize;
+	}
+
+	public void setWinningPrize(Long winningPrize) {
+		this.winningPrize = winningPrize;
 	}
 	
 	
