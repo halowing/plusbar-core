@@ -26,6 +26,7 @@ public class GameDTO extends GameVO implements Serializable {
 		setGameName(vo.getGameName());
 		setGamePlayerCnt(vo.getGamePlayerCnt());
 		setGamePrize(vo.getGamePrize());
+		setWinningPrize(vo.getWinningPrize());
 		setGameRoundCnt(vo.getGameRoundCnt());
 		setSeriesId(vo.getSeriesId());
 		setTitle(vo.getTitle());
