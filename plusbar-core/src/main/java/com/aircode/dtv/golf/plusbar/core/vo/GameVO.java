@@ -5,17 +5,25 @@ public class GameVO {
 	private String gameId;
 	private String seriesId           ;
 	private String gameName;
-	private Long    gamePrize          ;
-	private String  amtUnit            ;  // 상금 단위 "KSW"
-	private Integer gamePlayerCnt      ;
-	private Integer gameRoundCnt       ;
-	private String  gameOpenDate	   ;
-	private String  gameCloseDate	   ;
+	private Long    gamePrize          	;
+	private String  amtUnit            	;  // 상금 단위 "KSW"
+	private Integer gamePlayerCnt      	;
+	private Integer gameRoundCnt       	;
+	private String  gameOpenDate	   	;
+	private String  gameCloseDate	   	;
+	private String 	title				;
+	private String 	content				;
+	private String 	gameImageUrl		;
+	
+	
+	
+	
 	@Override
 	public String toString() {
-		return "GameVO [gameId=" + gameId + ", seriesId=" + seriesId + ", gameName=" + gameName + ", gamePrize="
-				+ gamePrize + ", amtUnit=" + amtUnit + ", gamePlayerCnt=" + gamePlayerCnt + ", gameRoundCnt="
-				+ gameRoundCnt + ", gameOpenDate=" + gameOpenDate + ", gameCloseDate=" + gameCloseDate + "]";
+		return String.format(
+				"GameVO [gameId=%s, seriesId=%s, gameName=%s, gamePrize=%s, amtUnit=%s, gamePlayerCnt=%s, gameRoundCnt=%s, gameOpenDate=%s, gameCloseDate=%s, title=%s, content=%s, gameImageUrl=%s]",
+				gameId, seriesId, gameName, gamePrize, amtUnit, gamePlayerCnt, gameRoundCnt, gameOpenDate,
+				gameCloseDate, title, content, gameImageUrl);
 	}
 	public String getGameId() {
 		return gameId;
@@ -70,6 +78,24 @@ public class GameVO {
 	}
 	public void setGameCloseDate(String gameCloseDate) {
 		this.gameCloseDate = gameCloseDate;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getGameImageUrl() {
+		return gameImageUrl;
+	}
+	public void setGameImageUrl(String gameImageUrl) {
+		this.gameImageUrl = gameImageUrl;
 	}
 	
 	
