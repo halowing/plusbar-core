@@ -21,13 +21,20 @@ public class KpgaCourseDTO implements Serializable {
 	private static final long serialVersionUID = -5486035633384913107L;
 	
 	private String gameId            ;
-//	private Integer gameCourseNo      ;
-//	private String regionCode        ;
-//	private String gameGroupCode     ;
-//	private String golfclubId        ;
+	
+	private String regionCode        ;
+	private String gameGroupCode     ;
+	private String golfclubId        ;
 	private String courseId          ;
-//	private String golfclubName      ;
+	private Integer gameCourseNo      ;
+	
+//	private String regionGroupCourseId;
+	
+	private String golfclubName      ;
 	private String courseName        ;
+	
+//	private String golfclubCourseName;
+	
 //	private String gameStartDate     ;
 //	private String gameEndDate       ;
 //	private Integer gamePlayerCnt     ;
@@ -95,15 +102,25 @@ public class KpgaCourseDTO implements Serializable {
 //	private Integer holeMeterOut      ;
 //	private Integer holeMeterIn       ;
 //	private Integer holeMeterSum      ;
+	
+	public String getRegionGroupCourseId() {
+		return regionCode+"-"+gameGroupCode+"-"+golfclubId+"-"+courseId+"-"+gameCourseNo;
+	}
+	public String getGolfclubCourseName() {
+		return golfclubName+" ("+courseName+")";
+	}
+	
 	@Override
 	public String toString() {
-		return "SkCourseDTO [gameId=" + gameId + ", courseId=" + courseId + ", courseName=" + courseName + ", holePar1="
-				+ holePar1 + ", holePar2=" + holePar2 + ", holePar3=" + holePar3 + ", holePar4=" + holePar4
-				+ ", holePar5=" + holePar5 + ", holePar6=" + holePar6 + ", holePar7=" + holePar7 + ", holePar8="
-				+ holePar8 + ", holePar9=" + holePar9 + ", holePar10=" + holePar10 + ", holePar11=" + holePar11
-				+ ", holePar12=" + holePar12 + ", holePar13=" + holePar13 + ", holePar14=" + holePar14 + ", holePar15="
-				+ holePar15 + ", holePar16=" + holePar16 + ", holePar17=" + holePar17 + ", holePar18=" + holePar18
-				+ ", holeParIn=" + holeParIn + ", holeParOut=" + holeParOut + ", holeParSum=" + holeParSum + "]";
+		return "KpgaCourseDTO [gameId=" + gameId + ", regionCode=" + regionCode + ", gameGroupCode=" + gameGroupCode
+				+ ", golfclubId=" + golfclubId + ", courseId=" + courseId + ", gameCourseNo=" + gameCourseNo
+				+ ", golfclubName=" + golfclubName + ", courseName=" + courseName + ", holePar1=" + holePar1
+				+ ", holePar2=" + holePar2 + ", holePar3=" + holePar3 + ", holePar4=" + holePar4 + ", holePar5="
+				+ holePar5 + ", holePar6=" + holePar6 + ", holePar7=" + holePar7 + ", holePar8=" + holePar8
+				+ ", holePar9=" + holePar9 + ", holePar10=" + holePar10 + ", holePar11=" + holePar11 + ", holePar12="
+				+ holePar12 + ", holePar13=" + holePar13 + ", holePar14=" + holePar14 + ", holePar15=" + holePar15
+				+ ", holePar16=" + holePar16 + ", holePar17=" + holePar17 + ", holePar18=" + holePar18 + ", holeParIn="
+				+ holeParIn + ", holeParOut=" + holeParOut + ", holeParSum=" + holeParSum + "]";
 	}
 	public String getGameId() {
 		return gameId;
@@ -249,8 +266,34 @@ public class KpgaCourseDTO implements Serializable {
 	public void setHoleParSum(Integer holeParSum) {
 		this.holeParSum = holeParSum;
 	}
-	
-	
-	
-
+	public String getRegionCode() {
+		return regionCode;
+	}
+	public void setRegionCode(String regionCode) {
+		this.regionCode = regionCode;
+	}
+	public String getGameGroupCode() {
+		return gameGroupCode;
+	}
+	public void setGameGroupCode(String gameGroupCode) {
+		this.gameGroupCode = gameGroupCode;
+	}
+	public String getGolfclubId() {
+		return golfclubId;
+	}
+	public void setGolfclubId(String golfclubId) {
+		this.golfclubId = golfclubId;
+	}
+	public Integer getGameCourseNo() {
+		return gameCourseNo;
+	}
+	public void setGameCourseNo(Integer gameCourseNo) {
+		this.gameCourseNo = gameCourseNo;
+	}
+	public String getGolfclubName() {
+		return golfclubName;
+	}
+	public void setGolfclubName(String golfclubName) {
+		this.golfclubName = golfclubName;
+	}
 }
