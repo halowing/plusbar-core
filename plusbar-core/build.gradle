@@ -9,6 +9,10 @@ group = 'com.aircode.dtv.golf'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+java {
+	withSourcesJar()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
