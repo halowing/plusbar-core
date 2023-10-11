@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.aircode.dtv.golf.plusbar.core.exception.DefaultApplicationException;
+import com.aircode.dtv.golf.plusbar.core.exception.HttpConflictException;
+import com.aircode.dtv.golf.plusbar.core.exception.HttpNotFoundException;
 import com.halowing.spring.web.dto.response.DefaultResponse;
-import com.halowing.spring.web.exception.DefaultApplicationException;
-import com.halowing.spring.web.exception.HttpConflictException;
-import com.halowing.spring.web.exception.HttpNotFoundException;
 
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {
