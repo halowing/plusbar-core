@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.aircode.dtv.golf'
-version = '0.0.2-SNAPSHOT'
+version = '0.0.3-RELEASE'
 sourceCompatibility = '11'
 
 java {

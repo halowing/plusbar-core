@@ -204,17 +204,61 @@ public class KpgaScoreDTO implements Serializable {
 	@JsonAlias(value = {"udpar_sum_4"})
 	private Integer udparSum4         ;			// 0
 	
-	
+	/**
+	 * course가  끝나기 전까지 course의 total을 표시하지 않는다
+	 * @return
+	 */
 	public Integer getOutScore() {
 		
+		if(roundEnd == null)
+			return null;
 		
-		return getSum(hole1 , hole2 , hole3 , hole4 , hole5 , hole6 , hole7 , hole8 , hole9) ;
+		int sum = getSum(hole1 , hole2 , hole3 , hole4 , hole5 , hole6 , hole7 , hole8 , hole9);
+		int re = Integer.parseInt(roundEnd);
+		
+		if("F".equalsIgnoreCase(roundEnd) || re == 9)
+			return sum;
+		
+		if("IN".equalsIgnoreCase(startInOut) && re > 9)
+			return sum;
+		
+		return null ;
 	}
 	
+	/**
+	 * course가  끝나기 전까지 course의 total을 표시하지 않는다
+	 * @return
+	 */
 	public Integer getInScore() {
 		
-		return getSum(hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18);
+		if(roundEnd == null)
+			return null;
 		
+		int sum = getSum(hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18);
+		int re = Integer.parseInt(roundEnd);
+		
+		if("F".equalsIgnoreCase(roundEnd) || re == 18)
+			return sum;
+		
+		if(	"OUT".equalsIgnoreCase(startInOut) && re <= 9 
+				) {
+			return sum;
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * 라운드를 종료하기 전까지는 udparSumTotal 을 표시한다.
+	 * 
+	 * @return the totalScore
+	 */
+	public Integer getTotalScore() {
+		
+		if("F".equalsIgnoreCase(roundEnd))
+			return totalScore;
+		else
+			return udparSumTot;
 	}
 	
 	private Integer getSum(Integer... arr ) {
@@ -586,13 +630,6 @@ public class KpgaScoreDTO implements Serializable {
 	 */
 	public String getRoundEnd() {
 		return roundEnd;
-	}
-
-	/**
-	 * @return the totalScore
-	 */
-	public Integer getTotalScore() {
-		return totalScore;
 	}
 
 	/**
