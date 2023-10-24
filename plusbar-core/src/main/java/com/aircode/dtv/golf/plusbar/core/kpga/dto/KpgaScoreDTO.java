@@ -214,9 +214,12 @@ public class KpgaScoreDTO implements Serializable {
 			return null;
 		
 		int sum = getSum(hole1 , hole2 , hole3 , hole4 , hole5 , hole6 , hole7 , hole8 , hole9);
-		int re = Integer.parseInt(roundEnd);
 		
-		if("F".equalsIgnoreCase(roundEnd) || re == 9)
+		if("F".equalsIgnoreCase(roundEnd))
+			return sum;
+		
+		int re = Integer.parseInt(roundEnd);
+		if(re == 9)
 			return sum;
 		
 		if("IN".equalsIgnoreCase(startInOut) && re > 9)
@@ -235,9 +238,12 @@ public class KpgaScoreDTO implements Serializable {
 			return null;
 		
 		int sum = getSum(hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18);
-		int re = Integer.parseInt(roundEnd);
 		
-		if("F".equalsIgnoreCase(roundEnd) || re == 18)
+		if("F".equalsIgnoreCase(roundEnd) )
+			return sum;
+		
+		int re = Integer.parseInt(roundEnd);
+		if( re == 18)
 			return sum;
 		
 		if(	"OUT".equalsIgnoreCase(startInOut) && re <= 9 
