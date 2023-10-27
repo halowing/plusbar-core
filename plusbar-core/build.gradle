@@ -1,12 +1,12 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.16'
+	id 'org.springframework.boot' version '2.7.17'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'java'
 	id 'maven-publish'
 }
 
 group = 'com.aircode.dtv.golf'
-version = '0.0.3-RELEASE'
+version = '0.0.4-RELEASE'
 sourceCompatibility = '11'
 
 java {
