@@ -222,7 +222,7 @@ public class KpgaScoreDTO implements Serializable {
 		if(re == 9)
 			return sum;
 		
-		if("IN".equalsIgnoreCase(startInOut) && re > 9)
+		if("OUT".equalsIgnoreCase(startInOut) && re > 9)
 			return sum;
 		
 		return null ;
@@ -246,7 +246,7 @@ public class KpgaScoreDTO implements Serializable {
 		if( re == 18)
 			return sum;
 		
-		if(	"OUT".equalsIgnoreCase(startInOut) && re <= 9 
+		if(	"IN".equalsIgnoreCase(startInOut) && re <= 9 
 				) {
 			return sum;
 		}
