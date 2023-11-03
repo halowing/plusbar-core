@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import com.halowing.util.StringUtility;
 
 /**
  * 대회 스코어 관련
@@ -210,7 +211,7 @@ public class KpgaScoreDTO implements Serializable {
 	 */
 	public Integer getOutScore() {
 		
-		if(roundEnd == null)
+		if(StringUtility.isBlank(roundEnd))
 			return null;
 		
 		int sum = getSum(hole1 , hole2 , hole3 , hole4 , hole5 , hole6 , hole7 , hole8 , hole9);
@@ -234,7 +235,7 @@ public class KpgaScoreDTO implements Serializable {
 	 */
 	public Integer getInScore() {
 		
-		if(roundEnd == null)
+		if(StringUtility.isBlank(roundEnd))
 			return null;
 		
 		int sum = getSum(hole10, hole11, hole12, hole13, hole14, hole15, hole16, hole17, hole18);
@@ -312,7 +313,9 @@ public class KpgaScoreDTO implements Serializable {
 				+ ", holeCode18=" + holeCode18 + ", roundEnd=" + roundEnd + ", totalScore=" + totalScore
 				+ ", accuSumUnderpar=" + accuSumUnderpar + ", accuSumScore=" + accuSumScore + ", totalHoleCnt="
 				+ totalHoleCnt + ", udparSum1=" + udparSum1 + ", udparSum2=" + udparSum2 + ", udparSum3=" + udparSum3
-				+ ", udparSum4=" + udparSum4 + "]";
+				+ ", udparSum4=" + udparSum4 
+				+ ", outScore=" + getOutScore() + ", inScore=" + getInScore() + ", totalScore=" + getTotalScore()
+				+ "]";
 	}
 
 	/**
